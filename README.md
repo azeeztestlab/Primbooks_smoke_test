@@ -1,13 +1,13 @@
-# PrimeBook — QA Testing & Documentation Repository
+# PrimBooks — QA Testing & Documentation Repository
 
 Welcome to the central repository for **PrimeBook** QA testing, strategy, and findings. This repository tracks the stability, functionality, and performance of the PrimeBook Financial & Business Management Platform.
 
 ## 📂 Repository Structure
 
-- **[PRIMEBOOK_SMOKE_TEST_FINDINGS.md](./PRIMEBOOK_SMOKE_TEST_FINDINGS.md)**  
+- **[PRIMBOOKS_SMOKE_TEST_FINDINGS.md](./PRIMEBOOK_SMOKE_TEST_FINDINGS.md)**  
   The primary report from the first smoke test. Includes visual evidence (screenshots) and detailed analysis of core module stability.
 
-- **[PRIMEBOOK_QA_ONBOARDING_GUIDE.md](./PRIMEBOOK_QA_ONBOARDING_GUIDE.md)**  
+- **[PRIMBOOKS_QA_ONBOARDING_GUIDE.md](./PRIMEBOOK_QA_ONBOARDING_GUIDE.md)**  
   The internal QA strategy, roadmap, and meeting prerequisites for the PrimeBook project.
 
 - **[PRIMEBOOK_PRD_STRUCTURED.md](./PRIMEBOOK_PRD_STRUCTURED.md)**  
