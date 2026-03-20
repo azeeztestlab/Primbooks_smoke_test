@@ -74,10 +74,15 @@ Testing in order of business impact:
 6. **Finance & Taxation**
 7. **HR & Payroll**
 
-### Phase 3: Integration & End-to-End
-- Does an Order in CRM correctly update the Finance ledger?
-- Does Payroll correctly reflect in Expense reports?
-- Does Inventory update after a Production run?
+### Phase 3: Integration & End-to-End (Week 3+)
+- Does creating an order in CRM correctly update the Finance ledger?
+- Does payroll correctly reflect in Expense reports?
+- Does inventory update after a Production run?
+
+### Phase 4: API & Automation (Future Roadmap)
+- **API Testing:** Verify backend endpoints using Postman/Swagger to ensure data integrity and security (Auth tokens).
+- **Regression Automation:** Once the UI is stable, I will implement automated scripts (e.g., Playwright or Cypress) for critical flows like Login, Record Creation, and Invoicing to prevent future bugs.
+- **Performance Testing:** Verify the system remains fast and stable as transaction volume grows.
 
 ---
 
