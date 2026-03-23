@@ -1,14 +1,14 @@
-# PrimeBook QA — Strategy & Kickstart Guide
+# PrimBooks QA — Strategy & Kickstart Guide
 
-**Role:** QA Lead / Tester for PrimeBook  
+**Role:** QA Lead / Tester for PrimBooks  
 **Prepared:** March 19, 2026  
-**Product:** PrimeBook — Cloud-based Financial & Business Management Platform for SMEs
+**Product:** PrimBooks — Cloud-based Financial & Business Management Platform for SMEs
 
 ---
 
 ## 1. Product Overview (Plain English)
 
-PrimeBook is a comprehensive **Financial & Business Management Platform** designed for small and medium businesses (SMEs). It combines accounting, CRM, HR, and production management into a single web application, replacing manual spreadsheets and notebooks.
+PrimBooks is a comprehensive **Financial & Business Management Platform** designed for small and medium businesses (SMEs). It combines accounting, CRM, HR, and production management into a single web application, replacing manual spreadsheets and notebooks.
 
 ### Key Modules:
 | Module | Purpose |
@@ -57,7 +57,7 @@ PrimeBook is a comprehensive **Financial & Business Management Platform** design
 
 ## 3. QA Strategy & Roadmap
 
-My structured approach to verifying PrimeBook:
+My structured approach to verifying PrimBooks:
 
 ### Phase 1: Smoke Test
 - System accessibility and load stability.
@@ -98,4 +98,4 @@ Items to confirm during development meetings:
 
 ## 5. Technical Note on Fintech Testing
 
-Financial accuracy is non-negotiable. Every decimal point and tax calculation matters. My testing focuses on ensuring that PrimeBook provides a reliable, audit-ready financial record for every business using it.
+Financial accuracy is non-negotiable. Every decimal point and tax calculation matters. My testing focuses on ensuring that PrimBooks provides a reliable, audit-ready financial record for every business using it.

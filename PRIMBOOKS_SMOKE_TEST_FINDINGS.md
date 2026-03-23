@@ -1,9 +1,10 @@
-# PrimeBook — Phase 1 Smoke Test Findings
+# PrimBooks — Phase 1 Smoke Test Findings
 
-**Date:** March 19, 2026  
+**Date:** March 23, 2026  
 **Lead QA:** Azeez  
 **Environment:** localhost:3000 (XAMPP dev server)  
-**Account:** qa.tester@primebook.test (Admin role)
+**Account:** gundro.nodes@gmail.com (Admin role)
+**Password:** Aliciababs
 
 ---
 
@@ -91,7 +92,7 @@ These are honest "not built yet" indicators. Not a bug, but worth documenting fo
 
 During sign up, we entered **"QA Test Corp"** as the Company Name. But in the Settings page, the profile shows:
 - **"Add Your Name"** ← This should say "QA Test Corp"
-- **PrimeBook Tester** (appears to be a default name)
+- **PrimBooks Tester** (appears to be a default name)
 - **qa.tester@primebook.test** ✅ Correct
 - **Admin** ✅ Correct
 - **Created on 3/19/2026** ✅ Correct
