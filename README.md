@@ -7,11 +7,12 @@ Welcome to the central repository for **PrimBooks** QA testing, strategy, and fi
 - **[PRIMBOOKS_SMOKE_TEST_PART1.md](./PRIMBOOKS_SMOKE_TEST_PART1.md)**  
   Smoke Test Part 1: System Accessibility, Authentication, and Module Navigation. (Bulky version for meetings).
 
-- **[PRIMBOOKS_SMOKE_TEST_PART2.md](./PRIMBOOKS_SMOKE_TEST_PART2.md)**  
-  Smoke Test Part 2: Detailed Dashboard Analysis, Identified Issues, and PRD Cross-Reference.
+- [PRIMBOOKS_SMOKE_TEST_FINAL_REPORT.md](./PRIMBOOKS_SMOKE_TEST_FINAL_REPORT.md)  
+  Smoke Test Final Report: Phase 2 findings (Records, Finance, Payroll) and overall readiness verdict.
 
-- **[PRIMBOOKS_QA_ONBOARDING_GUIDE.md](./PRIMBOOKS_QA_ONBOARDING_GUIDE.md)**  
+- [PRIMBOOKS_QA_ONBOARDING_GUIDE.md](./PRIMBOOKS_QA_ONBOARDING_GUIDE.md)  
   The internal QA strategy, roadmap, and meeting prerequisites for the PrimBooks project.
+
 
 - **[PRIMBOOKS_PRD_STRUCTURED.md](./PRIMBOOKS_PRD_STRUCTURED.md)**  
   A structured version of the Product Requirements Document (PRD) for quick reference during testing.
@@ -21,12 +22,15 @@ Welcome to the central repository for **PrimBooks** QA testing, strategy, and fi
 
 ## 🚀 Quality Assurance Status
 
-**Current Phase:** Phase 1 (Smoke Testing) — ✅ **COMPLETE**
+**Current Phase:** Phase 1 & 2 (Smoke Testing) — ✅ **COMPLETE**
+
 
 ### Key Findings:
 - All 12 sidebar modules are accessible and load correctly.
 - Authentication (Sign up/Login) is stable.
-- **Critical Alert:** Dashboard KPI metrics and charts are currently using hardcoded/seed data instead of live calculations.
+- **Critical Alert:** Dashboard KPI metrics and charts are currently using hardcoded/seed data.
+- **Phase 2 Alert:** Numeric validation inconsistencies found in the Records module (negative values allowed on edit).
+
 
 ## 📅 Next Steps
 1. **Deep-Testing Phase:** Execute CRUD operations across the `Record`, `CRM`, and `Bank Reconciliation` modules.

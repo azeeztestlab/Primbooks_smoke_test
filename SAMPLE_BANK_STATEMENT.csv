@@ -1,0 +1,6 @@
+Date,Description,Reference,Withdrawal,Deposit,Balance
+2026-03-01,Opening Balance,REF000,,100000.00,100000.00
+2026-03-05,Office Rent Payment,RENT2026,25000.00,,75000.00
+2026-03-10,Customer Payment - ABC Corp,INV-1001,,15000.00,90000.00
+2026-03-15,Internet Subscription,INTERNET,5000.00,,85000.00
+2026-03-20,Utility Bill,UTIL-MARCH,3000.00,,82000.00
