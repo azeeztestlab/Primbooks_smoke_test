@@ -1,26 +1,20 @@
-# PrimBooks Smoke Test Documentation
+# PrimBooks QA Workspace
 
-Welcome to the official QA documentation for the PrimBooks platform. This repository contains the results and roadmap from the initial Smoke Test phase.
+Welcome to the official QA repository for PrimBooks. This workspace contains the finalized results of the Smoke Test phase and the strategic roadmap for functional testing.
 
-## 📊 Presentation Documents (Today's Meeting)
-For a high-level overview of our progress and findings, please refer to:
-- **[Executive Summary & Introduction](./PRIMBOOKS_QA_INTRODUCTION.md)**
-- **[Comprehensive Presentation Report](./PRIMBOOKS_SMOKE_TEST_PRESENTATION.md)**
-- **[QA Roadmap & Next Steps](./PRIMBOOKS_QA_ROADMAP.md)**
+## 📁 Key Documentation
 
----
+### 1. [QA Flight Plan (Report & Roadmap)](./PRIMBOOKS_QA_FLIGHT_PLAN.md)
+**Start Here.** This is the single source of truth for the project. It contains:
+*   The Consolidated Smoke Test Report (Phase 1 & 2).
+*   The Introduction to Functional Testing.
+*   The 3-Phase Strategic Roadmap.
 
-## 🛠️ Detailed Test Findings
-Access the raw findings from each testing phase below:
-- **[Phase 1 Report: Core Modules & Navigation](./PRIMBOOKS_SMOKE_TEST_FINDINGS.md)**
-- **[Phase 2 Report: Financials, HR, & Payroll](./PRIMBOOKS_SMOKE_TEST_FINAL_REPORT.md)**
-- **[Records Functional Test](./PRIMBOOKS_SMOKE_TEST_PART2_RECORDS.md)**
+### 2. [QA Onboarding Guide](./PRIMBOOKS_QA_ONBOARDING_GUIDE.md)
+Technical setup and environment details for QA engineers.
 
----
-
-## 📋 Operational Resources
-- **[QA Onboarding Guide](./PRIMBOOKS_QA_ONBOARDING_GUIDE.md)**
-- **[Structured PRD](./PRIMBOOKS_PRD_STRUCTURED.md)**
+### 3. [Product Requirements (PRD)](./PRIMBOOKS_PRD_STRUCTURED.md)
+The structured requirements used to validate the platform.
 
 ---
 *Maintained by Azeez Test Lab*
