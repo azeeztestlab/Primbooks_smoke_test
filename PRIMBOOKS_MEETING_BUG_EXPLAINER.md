@@ -171,9 +171,6 @@ When customer type is "Individual," Company Name is still required.
 ### UX-003: No Loading Spinners
 Pages look empty while data is fetching.
 
-### UX-004: Empty Tables Have No "No Data" Message
-Users can't tell if a table is loading or genuinely empty.
-
 ---
 
 ## 🔗 THE CRM DEPENDENCY CHAIN — ✅ RESOLVED!

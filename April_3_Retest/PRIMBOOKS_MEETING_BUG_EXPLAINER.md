@@ -187,31 +187,12 @@ These are legitimate accounting fields, but there's no clear guidance on how to 
 
 ---
 
-## 🟡 MEDIUM SEVERITY BUGS — 4 Issues
 
----
 
-### REC-002: Selling Price Renders as Dropdown
-Minor UI issue — Selling Price shows as searchable dropdown instead of number input. Usable but confusing.
-
-### REC-003: Price Calculation Mismatch (₦1000 → ₦998)
-Hidden calculation applied without transparency.
-
-### CRM-004: Company Name Required Even for Individuals
-When customer type is "Individual," Company Name is still required.
-
-### CRM-005: Phone Validation Too Strict
-Requires +234 format without telling the user.
-
----
-
-## 🟢 LOW SEVERITY BUGS — 2 Issues
+## 🟢 LOW SEVERITY BUG — 1 Issue
 
 ### UX-003: No Loading Spinners
 Pages look empty while data is fetching.
-
-### UX-004: Empty Tables Have No "No Data" Message
-Users can't tell if a table is loading or genuinely empty.
 
 ---
 

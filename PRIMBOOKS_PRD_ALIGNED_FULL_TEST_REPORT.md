@@ -1,12 +1,12 @@
-# PrimBooks — PRD-Aligned Full Regression & CRUD Test Report (UPDATED)
+# PrimBooks — Full Regression & CRUD Test Report
 
-**Document Type:** Final PRD-Aligned Regression + CRUD Re-Test
-**Product:** PrimBooks — Cloud-Based Financial & Business Management Platform
+**Report Type:** Regression + CRUD Re-Test
+**Product:** PrimBooks
 **Testing Period:** Current Sprint
 **Re-Test:** Latest Build Verification
 **Prepared For:** Internal Review
 **QA Lead:** Azeez Test Lab
-**PRD Version:** PrimBooks_PRD_Latest_Version (Master PRD)
+**PRD Version:** PrimBooks_PRD_Latest_Version
 **Scope:** All PRD modules re-tested against latest build
 
 ---
@@ -168,7 +168,7 @@ This re-test was conducted against the **latest PrimBooks build**, following dev
 
 | CRUD Operation | Status | Notes |
 |:---|:---:|:---|
-| **Create** | ❌ | Vendor dropdown still shows "No results found" |
+| **Create** | ❌ | Vendor dropdown not populating |
 | **Read** | ✅ | Page loads |
 
 **Remaining Bug:**
@@ -223,8 +223,6 @@ This re-test was conducted against the **latest PrimBooks build**, following dev
 ---
 
 
-
----
 
 ### 3.15 Audit Trail (PRD §6.10) — ✅ PASS ✨ XSS FIXED
 
@@ -300,12 +298,11 @@ All critical bugs have been resolved. ✅
 |:---|:---|:---|:---:|
 | **CRM-004** | CRM/Customer | Company Name required even for "Individual" type | ❌ Open |
 
-### 🟢 Low (2 bugs)
+### 🟢 Low (1 bug)
 
 | Bug ID | Module | Description | Status |
 |:---|:---|:---|:---:|
 | **UX-003** | Global | No loading spinners during API calls | ❌ Open |
-| **UX-004** | Payroll | Empty tables lack "No data" messaging | ❌ Open |
 
 ### ✅ Fixed (13 bugs closed)
 
@@ -326,9 +323,7 @@ All critical bugs have been resolved. ✅
 | **PAY-001** | Payroll | Payroll now shows employees and payouts |
 | **PROD-001** | Production | Customer dropdown now populates |
 | **DASH-003** | Dashboard | Employee count now visible (3 employees) |
-| **REC-002** | Record | Selling Price is now a proper number input |
-| **REC-003** | Record | Calculation mismatch resolved |
-| **CRM-005** | CRM/Customer | Phone validation now accepts 090 format |
+| **UX-004** | Payroll | Employee added to payroll — table now populated |
 
 ---
 

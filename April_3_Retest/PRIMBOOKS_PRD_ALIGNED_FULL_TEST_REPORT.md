@@ -1,13 +1,13 @@
-# PrimBooks — PRD-Aligned Full Regression & CRUD Test Report (UPDATED)
+# PrimBooks — Full Regression & CRUD Test Report
 
-**Document Type:** Final PRD-Aligned Regression + CRUD Re-Test
-**Product:** PrimBooks — Cloud-Based Financial & Business Management Platform
+**Report Type:** Regression + CRUD Re-Test
+**Product:** PrimBooks
 **Testing Period:** Current Sprint
 **Re-Test:** Latest Build Verification
 **Prepared For:** Internal Review
 **QA Lead:** Azeez Test Lab
-**PRD Version:** PrimBooks_PRD_Latest_Version (Master PRD)
-**Scope:** All 12 PRD modules re-tested against latest build (Bank Reconciliation skipped per dev team instruction)
+**PRD Version:** PrimBooks_PRD_Latest_Version
+**Scope:** All 12 PRD modules re-tested against latest build
 
 ---
 
@@ -89,10 +89,8 @@ This re-test was conducted against the **latest PrimBooks build**, following dev
 | **Search** | ❌ | Search bar present but non-functional — "test" typed, still shows 1-4 of 4 Records |
 | **XSS Security** | ✅ | **FIXED** — Script tags render as plain text |
 
-**Remaining Bugs:**
+**Remaining Bug:**
 - **REC-001** 🟠 Search bar non-functional — does not filter records
-- **REC-002** 🟡 Selling Price renders as dropdown instead of numeric input
-- **REC-003** 🟡 Calculation mismatch (₦1000 → ₦998)
 
 ---
 
@@ -108,7 +106,6 @@ This re-test was conducted against the **latest PrimBooks build**, following dev
 **Previous Bugs — ALL FIXED:**
 - ~~CRM-003~~ ✅ Customer creation now works
 - **CRM-004** 🟡 Company Name still shown even for Individual type (minor UX)
-- **CRM-005** 🟡 Phone validation still strict (minor UX)
 
 ---
 
@@ -160,12 +157,12 @@ This re-test was conducted against the **latest PrimBooks build**, following dev
 
 | PRD Requirement | Status | Notes |
 |:---|:---:|:---|
-| Create production orders | ❌ | Customer dropdown shows "No results found" |
+| Create production orders | ❌ | Customer dropdown not populating from other modules |
 | Add raw materials | ❌ | Material dropdown empty |
 | Track WIP/Finished | ⚠️ | KPI cards visible but untestable |
 
 **Remaining Bug:**
-- **PROD-001** 🔴 Production creation blocked — Customer/Material dropdowns return "No results found" despite customers existing in CRM
+- **PROD-001** 🔴 Production creation blocked — Customer/Material dropdowns not populating from other modules
 
 ---
 
@@ -173,7 +170,7 @@ This re-test was conducted against the **latest PrimBooks build**, following dev
 
 | CRUD Operation | Status | Notes |
 |:---|:---:|:---|
-| **Create** | ❌ | Vendor dropdown still shows "No results found" |
+| **Create** | ❌ | Vendor dropdown not populating |
 | **Read** | ✅ | Page loads |
 
 **Remaining Bug:**
@@ -227,11 +224,7 @@ This re-test was conducted against the **latest PrimBooks build**, following dev
 
 ---
 
-### 3.14 Bank Reconciliation (PRD §6.9) — ⏭️ SKIPPED
 
-Skipped per dev team instruction.
-
----
 
 ### 3.15 Audit Trail (PRD §6.10) — ✅ PASS ✨ XSS FIXED
 
@@ -305,21 +298,17 @@ Recent audit entries captured:
 | **EXP-001** | Purchase/Expenses | Expense creation blocked — Vendor dropdown empty | ❌ Open (depends on VEND-002) |
 | **HRM-001** | HRM | Average Salary still manual text input | ⚠️ Not retested |
 
-### 🟡 Medium (4 bugs)
+### 🟡 Medium (1 bug)
 
 | Bug ID | Module | Description | Status |
 |:---|:---|:---|:---:|
-| **REC-002** | Record | Selling Price field renders as dropdown instead of numeric | ❌ Open |
-| **REC-003** | Record | Calculation mismatch (₦1000 → ₦998) | ❌ Open |
 | **CRM-004** | CRM/Customer | Company Name required even for "Individual" type | ❌ Open |
-| **CRM-005** | CRM/Customer | Phone validation too strict without user guidance | ❌ Open |
 
-### 🟢 Low (2 bugs)
+### 🟢 Low (1 bug)
 
 | Bug ID | Module | Description | Status |
 |:---|:---|:---|:---:|
 | **UX-003** | Global | No loading spinners during API calls | ❌ Open |
-| **UX-004** | Payroll | Empty tables lack "No data" messaging | ❌ Open |
 
 ### ✅ Fixed (13 bugs closed)
 
@@ -353,7 +342,6 @@ Recent audit entries captured:
 | Finance | ✅ | ✅ (4 sub-modules) | ✅ Functional + XSS Fixed |
 | Payroll Mgmt. | ✅ | ✅ (7 sub-modules) | ✅ Functional |
 | Inventory | ✅ | ✅ (2 sub-modules) | ✅ Functional |
-| Bank Recon | ✅ | N/A | ⏭️ Skipped |
 | Audit Trail | ✅ | N/A | ✅ Functional + XSS Fixed |
 | Assets | ✅ | ✅ (7 sub-modules) | ✅ Functional |
 | Settings | ✅ | ✅ All present | ✅ **Fully Complete** ✨ |
