@@ -993,26 +993,54 @@ let bugs = [];
 let expandedRows = new Set();
 const MAX_UNDO_HISTORY = 50;
 
-// Version tracker -- increment this each time DEFAULT_BUGS is updated
-const DATA_VERSION = 8;
+// Auto-compute a fingerprint of DEFAULT_BUGS so we detect file changes automatically
+// No more manual version bumping needed!
+function computeDataFingerprint() {
+    var raw = JSON.stringify(DEFAULT_BUGS);
+    var hash = 0;
+    for (var i = 0; i < raw.length; i++) {
+        var ch = raw.charCodeAt(i);
+        hash = ((hash << 5) - hash) + ch;
+        hash = hash & hash; // Convert to 32-bit integer
+    }
+    return 'fp_' + Math.abs(hash) + '_' + DEFAULT_BUGS.length;
+}
 
 function loadBugs() {
-    const stored = localStorage.getItem('primbooks_bugs');
-    const storedVersion = localStorage.getItem('primbooks_data_version');
+    var currentFingerprint = computeDataFingerprint();
+    var storedFingerprint = localStorage.getItem('primbooks_data_fingerprint');
 
-    // If data version changed, force a complete reset to DEFAULT_BUGS
-    if (!storedVersion || parseInt(storedVersion) < DATA_VERSION) {
+    // If the file's DEFAULT_BUGS changed (new bugs added, statuses updated, etc.)
+    // always load fresh from the file -- this is the bulletproof part
+    if (storedFingerprint !== currentFingerprint) {
         bugs = JSON.parse(JSON.stringify(DEFAULT_BUGS));
-        localStorage.setItem('primbooks_data_version', DATA_VERSION);
-        saveBugsNoHistory(); // first load, don't push history
+        localStorage.setItem('primbooks_data_fingerprint', currentFingerprint);
+        localStorage.removeItem('primbooks_undo_history');
+        saveBugsNoHistory();
+        if (storedFingerprint) {
+            // Not the very first load -- show sync notification
+            showToast('Bug data updated from latest push!');
+        }
         return;
     }
 
+    // File hasn't changed -- load from localStorage if available (preserves in-session edits)
+    var stored = localStorage.getItem('primbooks_bugs');
     if (stored) {
-        bugs = JSON.parse(stored);
+        try {
+            bugs = JSON.parse(stored);
+            // Safety check -- if localStorage somehow has 0 bugs, reload from defaults
+            if (!bugs || bugs.length === 0) {
+                bugs = JSON.parse(JSON.stringify(DEFAULT_BUGS));
+                saveBugsNoHistory();
+            }
+        } catch(e) {
+            // If localStorage is corrupted, reload from defaults
+            bugs = JSON.parse(JSON.stringify(DEFAULT_BUGS));
+            saveBugsNoHistory();
+        }
     } else {
         bugs = JSON.parse(JSON.stringify(DEFAULT_BUGS));
-        localStorage.setItem('primbooks_data_version', DATA_VERSION);
         saveBugsNoHistory();
     }
     updateUndoButton();
@@ -1071,10 +1099,11 @@ function resetToDefaults() {
     if (confirm('FACTORY RESET: This will wipe ALL bugs and restore original defaults. This CANNOT be undone. Are you absolutely sure?')) {
         if (confirm('SECOND CONFIRM: All your added bugs, status changes, and edits will be permanently deleted. Proceed?')) {
             localStorage.removeItem('primbooks_bugs');
+            localStorage.removeItem('primbooks_data_fingerprint');
             localStorage.removeItem('primbooks_data_version');
             localStorage.removeItem('primbooks_undo_history');
             bugs = JSON.parse(JSON.stringify(DEFAULT_BUGS));
-            localStorage.setItem('primbooks_data_version', DATA_VERSION);
+            localStorage.setItem('primbooks_data_fingerprint', computeDataFingerprint());
             saveBugsNoHistory();
             renderTable();
             showToast('Factory reset complete -- all data cleared');
