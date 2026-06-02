@@ -1094,8 +1094,8 @@ function buildBugDataString() {
 // ===================== DATA =====================
 // ===BEGIN_BUG_DATA===
 const DEFAULT_BUGS = [
-    { ticket: "TEST-001", module: "CRM", feature: "Test Feature A", description: "This is a test bug for verifying the Push to GitHub feature", steps: "1. Open the tracker\n2. Click Push to GitHub\n3. Verify it works", expected: "Bug data should be pushed to GitHub successfully", actual: "Not yet tested", severity: "Medium", status: "Open", team: "Frontend" },
-    { ticket: "TEST-002", module: "Assets", feature: "Test Feature B", description: "Second test bug with special characters: em-dash \u2014 and Naira \u20a6 symbol", steps: "1. Check encoding\n2. Verify special chars", expected: "All special characters should be preserved after push", actual: "Pending verification", severity: "High", status: "Open", team: "Backend" },
+    { ticket: "TEST-001", module: "CRM", feature: "Test Feature A", description: "This is a test bug for verifying the Push to GitHub feature", steps: "1. Open the tracker\n2. Click Push to GitHub\n3. Verify it works", expected: "Bug data should be pushed to GitHub successfully", actual: "Not yet tested", severity: "Medium", status: "Fixed", team: "Frontend" },
+    { ticket: "TEST-002", module: "Assets", feature: "Test Feature B", description: "Second test bug with special characters: em-dash — and Naira ₦ symbol", steps: "1. Check encoding\n2. Verify special chars", expected: "All special characters should be preserved after push", actual: "Pending verification", severity: "High", status: "Fixed", team: "Backend" },
     { ticket: "TEST-003", module: "Production", feature: "Test Feature C", description: "Third test bug to verify multi-bug push works correctly", steps: "1. Add this bug\n2. Push all 3\n3. Refresh page", expected: "All 3 bugs should appear after push and page refresh", actual: "Working as expected", severity: "Low", status: "Closed", team: "Frontend" }
 ];
 // ===END_BUG_DATA===
