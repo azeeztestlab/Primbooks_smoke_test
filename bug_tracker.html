@@ -1632,7 +1632,9 @@ function copyForPush() {
         code += "actual: " + JSON.stringify(bug.actual || "") + ", ";
         code += "severity: " + JSON.stringify(bug.severity) + ", ";
         code += "status: " + JSON.stringify(bug.status) + ", ";
-        code += "team: " + JSON.stringify(bug.team);
+        code += "team: " + JSON.stringify(bug.team) + ", ";
+        var src = bug.source || (parseInt(bug.ticket.replace("PB-", "")) >= 63 ? "PM & Team" : "Senior QA Audit");
+        code += "source: " + JSON.stringify(src);
         code += " }";
         if (i < bugs.length - 1) code += ",";
         code += "\n";
