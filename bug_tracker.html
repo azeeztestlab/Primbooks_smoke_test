@@ -1293,7 +1293,12 @@ function getFilteredBugs() {
         if (severity !== 'all' && b.severity !== severity) return false;
         if (module !== 'all' && b.module !== module) return false;
         if (team !== 'all' && b.team !== team) return false;
-        const bugSource = b.source || 'Senior QA Audit';
+        let bugSource = b.source;
+        if (!bugSource) {
+            const m = b.ticket.match(/PB-(\d+)/);
+            const num = m ? parseInt(m[1]) : 0;
+            bugSource = num >= 63 ? 'PM & Team' : 'Senior QA Audit';
+        }
         if (currentSourceTab !== 'all' && bugSource !== currentSourceTab) return false;
         if (search && !b.description.toLowerCase().includes(search) && !b.ticket.toLowerCase().includes(search) && !b.module.toLowerCase().includes(search)) return false;
         return true;
@@ -1423,6 +1428,10 @@ function editBug(idx) {
     document.getElementById('formSteps').value = bug.steps || '';
     document.getElementById('formExpected').value = bug.expected || '';
     document.getElementById('formActual').value = bug.actual || '';
+    if (document.getElementById('formSource')) {
+        const ticketNum = parseInt(bug.ticket.replace('PB-', '')) || 0;
+        document.getElementById('formSource').value = bug.source || (ticketNum >= 63 ? 'PM & Team' : 'Senior QA Audit');
+    }
     document.getElementById('addModal').classList.add('show');
 }
 
@@ -1445,6 +1454,9 @@ function openAddModal() {
     document.getElementById('formSteps').value = '';
     document.getElementById('formExpected').value = '';
     document.getElementById('formActual').value = '';
+    if (document.getElementById('formSource')) {
+        document.getElementById('formSource').value = currentSourceTab === 'all' ? 'Senior QA Audit' : currentSourceTab;
+    }
     document.getElementById('addModal').classList.add('show');
 }
 
@@ -1470,7 +1482,8 @@ function saveBug() {
         actual: document.getElementById('formActual').value.trim(),
         severity: document.getElementById('formSeverity').value,
         status: document.getElementById('formStatus').value,
-        team: document.getElementById('formTeam').value
+        team: document.getElementById('formTeam').value,
+        source: document.getElementById('formSource') ? document.getElementById('formSource').value : 'Senior QA Audit'
     };
 
     const editIdx = parseInt(document.getElementById('editIndex').value);
